@@ -56,16 +56,6 @@
         <hr>
 
       </div> <!-- /container -->
-      {{ $url := "datacsv/scraperr18singles.csv" }}
-      {{ $sep := "," }}
-      {{ range $i, $r := getCSV $sep $url }}
-        <tr>
-          <td>{{ index $r 0 }}</td>
-          <td>{{ index $r 1 }}</td>
-          <td>{{ index $r 2 }}</td>
-        </tr>
-      {{ end }}
-
     </main>
     {{ partial "footer.html" . }}
     {{ partial "js.html" . }}
