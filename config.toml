@@ -1,3 +1,10 @@
-baseURL = "http://example.org/"
+baseURL = "http://localhost:1313"
 languageCode = "en-us"
 title = "My New Hugo Site"
+Paginate = "30"
+
+[taxonomies]
+  category = "categories"
+  affsite = "affsites"
+  aff = "affs"
+  girl = "girls"
