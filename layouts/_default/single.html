@@ -1,1 +1,39 @@
-testing
+{{ partial "header.html" . }}
+  <body>
+    {{ partial "nav.html" . }}
+    <main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Hello, world!</h1>
+          <p>This is a template for a simple marketing or informational website.</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-3 col-lg-2">
+            {{ partial "nav-side.html" . }}
+          </div>
+          <div class="col-sm-12 col-md-9 col-lg-10">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-2 archblock">
+                  <img class="img-responsive" src="http://{{.Params.mainimgurl}}" alt="">
+                  <p class="archtitle">{{.Title }}</p>
+                  <p class>Release Date: {{.Params.releasedate }}</p>
+                  <p><a class="btn btn-secondary" href="{{.Permalink}}" role="button">View details &raquo;</a></p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+      </div> <!-- /container -->
+    </main>
+    {{ partial "footer.html" . }}
+    {{ partial "js.html" . }}
+  </body>
+</html>
