@@ -25,8 +25,10 @@ with open('datacsv/scraperr18singles.csv') as csvfile: #open the csv containing 
         imgs = row[12]
 
         url2 = url.strip('http://www.') #remove protocol, hugo only allows relative urls
+        url2 = url2.split('=')[-1]
         samplevid = samplevid.strip('http://')
-        mainimgurl = mainimgurl.strip('https://')
+        # mainimgurl = mainimgurl.strip('https://')
+        mainimgurl = mainimgurl.replace('https://', '')
         imgurls = imgurls.replace("https://", "")
 
         if url == 'url': #don't print out first line of csv (the header)
@@ -46,6 +48,8 @@ with open('datacsv/scraperr18singles.csv') as csvfile: #open the csv containing 
                 f.write('afflink: "abc128"') #update with affiliate code later
                 f.write('\n')
                 f.write('url: "'+url2+'"')
+                f.write('\n')
+                f.write('urloriginal: "'+url+'"')
                 f.write('\n')
                 f.write('samplevid: "'+samplevid+'"')
                 f.write('\n')

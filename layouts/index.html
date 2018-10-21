@@ -19,37 +19,15 @@
           </div>
           <div class="col-sm-12 col-md-9 col-lg-10">
             <div class="row">
-              <div class="col-sm-6 col-md-4 col-lg-2">
-                <img class="img-responsive" src="images/r18thumbnail.jpg" alt="">
-                <p>title</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-              </div>
-              <div class="col-sm-6 col-md-4 col-lg-2">
-                <img class="img-responsive" src="images/r18thumbnail.jpg" alt="">
-                <p>title</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-              </div>
-              <div class="col-sm-6 col-md-4 col-lg-2">
-                <img class="img-responsive" src="images/r18thumbnail.jpg" alt="">
-                <p>title</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-              </div>
-              <div class="col-sm-6 col-md-4 col-lg-2">
-                <img class="img-responsive" src="images/r18thumbnail.jpg" alt="">
-                <p>title</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-              </div>
-              <div class="col-sm-6 col-md-4 col-lg-2">
-                <img class="img-responsive" src="images/r18thumbnail.jpg" alt="">
-                <p>title</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-              </div>
-              <div class="col-sm-6 col-md-4 col-lg-2">
-                <img class="img-responsive" src="images/r18thumbnail.jpg" alt="">
-                <p>title</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-              </div>
+              {{ range (.Paginator 60).Pages }}
+                <div class="col-sm-6 col-md-4 col-lg-2 archblock">
+                  <img class="img-responsive" src="http://{{.Params.mainimgurl}}" alt="">
+                  <p class="archtitle">{{.Title | truncate 40}}</p>
+                  <p><a class="btn btn-secondary" href="{{.Permalink}}" role="button">View details &raquo;</a></p>
+                </div>
+              {{ end }}
             </div>
+            {{ template "_internal/pagination.html" . }}
           </div>
         </div>
 
