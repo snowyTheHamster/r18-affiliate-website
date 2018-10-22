@@ -1,6 +1,6 @@
-baseURL = "http://localhost:1313"
+baseURL = "http://javhub.tk"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "javhub"
 Paginate = "30"
 
 [taxonomies]

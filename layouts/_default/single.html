@@ -6,12 +6,11 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">Hello, world!</h1>
-          <p>This is a template for a simple marketing or informational website.</p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+          <h1 class="display-3">JavHub.tk</h1>
+          <p>Your daily load of free Japanese Porn.</p>
         </div>
       </div>
-
+      
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-3 col-lg-2">
@@ -19,12 +18,47 @@
           </div>
           <div class="col-sm-12 col-md-9 col-lg-10">
             <div class="row">
-                <div class="col-sm-6 col-md-4 col-lg-2 archblock">
-                  <img class="img-responsive" src="http://{{.Params.mainimgurl}}" alt="">
-                  <p class="archtitle">{{.Title }}</p>
-                  <p class>Release Date: {{.Params.releasedate }}</p>
-                  <p><a class="btn btn-secondary" href="{{.Permalink}}" role="button">View details &raquo;</a></p>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <h3>{{ .Title }}</h3>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-2">
+                <img class="img-responsive" src="http://{{ .Params.mainimgurl }}" alt="">
+              </div>
+              <div class="col-sm-12 col-md-8 col-lg-10">
+                <div class="row">
+                  <div class="col-sm-12 col-md-6 col-lg-6">
+                    <p>Release Date: {{ .Params.releasedate }}</p>  
+                    <p>Affiliate Site: {{ .Params.affsite }}</p>  
+                  </div>
+                  <div class="col-sm-12 col-md-6 col-lg-6">
+                    <p>Duration: {{ .Params.duration }}</p>  
+                    <p>Production: {{ .Params.productioncomp }}</p>  
+                  </div>
                 </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-12">
+                    <p>Actress: {{ .Params.girls }}</p>
+                    <p>Categories: {{ .Params.categories }}</p>
+                    <p><a class="btn btn-primary" href="{{ .Params.urlfinal }}" role="button" target="_blank" rel="noopener noreferrer">View High Quality &raquo;</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                {{ range $.Params.imgurls }}
+                <img class="img-thumb" src="https://{{ . }}">
+                {{ end }}
+                <h4>Sample:</h4>
+                <p>
+                  <video class="video-single" controls>
+                    <source src="http://{{ .Params.samplevid }}" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </p>
+                  <p><a class="btn btn-primary" href="{{ .Params.urlfinal }}" role="button" target="_blank" rel="noopener noreferrer">View High Quality &raquo;</a></p>
+              </div>
             </div>
           </div>
         </div>

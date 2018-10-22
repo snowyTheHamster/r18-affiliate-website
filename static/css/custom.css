@@ -32,3 +32,22 @@
     background-color: #fff;
     border: 1px solid #ddd;
 }
+.img-thumb{
+    width: 120px;
+    height: 90px;
+    margin-right: 0.1em;
+    margin-bottom: 0.3em;
+}
+video.video-single{
+    width: 100%;
+    height: auto;
+}
+footer .left{
+    display: inline;
+}
+footer .right{
+    float: right;
+}
+.hide{
+    display: none;
+}

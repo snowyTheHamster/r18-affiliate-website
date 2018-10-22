@@ -23,6 +23,7 @@ with open('datacsv/scraperr18singles.csv') as csvfile: #open the csv containing 
         catogories = row[10]
         imgurls = row[11]
         imgs = row[12]
+        afflinkr18 = 'NjA4LjEuMS4xLjAuMC4wLjAuMA'
 
         url2 = url.strip('http://www.') #remove protocol, hugo only allows relative urls
         url2 = url2.split('=')[-1]
@@ -30,6 +31,10 @@ with open('datacsv/scraperr18singles.csv') as csvfile: #open the csv containing 
         # mainimgurl = mainimgurl.strip('https://')
         mainimgurl = mainimgurl.replace('https://', '')
         imgurls = imgurls.replace("https://", "")
+
+        urlf1 = 'http://media.r18.com/'
+        urlf2 = url.split('http://www.r18.com/')[-1]
+        urlfinal = urlf1+'track/'+afflinkr18+'/'+urlf2
 
         if url == 'url': #don't print out first line of csv (the header)
             print('meh')
@@ -45,11 +50,13 @@ with open('datacsv/scraperr18singles.csv') as csvfile: #open the csv containing 
                 f.write('\n')
                 f.write('affsite: "r18"')
                 f.write('\n')
-                f.write('afflink: "abc128"') #update with affiliate code later
+                f.write('afflinkr18: "'+afflinkr18+'"') #update with affiliate code later
                 f.write('\n')
                 f.write('url: "'+url2+'"')
                 f.write('\n')
                 f.write('urloriginal: "'+url+'"')
+                f.write('\n')
+                f.write('urlfinal: "'+urlfinal+'"')
                 f.write('\n')
                 f.write('samplevid: "'+samplevid+'"')
                 f.write('\n')
