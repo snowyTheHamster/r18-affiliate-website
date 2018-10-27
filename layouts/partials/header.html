@@ -7,11 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
     {{ .Hugo.Generator }}
-    <title>{{ .Title }}{{ if not .IsHome }}{{ .Site.Title }}{{ end }}</title>
+    <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
     {{ "<!-- Stylesheets -->" | safeHTML }}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="{{ "css/age-verification.css" | relURL }}" rel="stylesheet">
     <link href="{{ "css/custom.css" | relURL }}" rel="stylesheet">
-        <link rel="icon" type="image/favicon.png" href="{{ . | relURL }}">
+    <link rel="icon" type="image/favicon.png" href="{{ . | relURL }}">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48006674-9"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-48006674-9');
+    </script>
 
 </head>

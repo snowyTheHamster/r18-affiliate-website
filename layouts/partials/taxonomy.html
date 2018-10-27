@@ -1,0 +1,15 @@
+<div class="sideblocks">
+    <header>{{ .key | upper }}</header>
+    <div>
+        <ul class="terms">
+            {{ range $key, $value := first 99 .value.ByCount }}
+                <li>
+                    <a href="{{ $.baseurl}}{{ $.key }}/{{ .Name | urlize }}">
+                        {{ .Name }} <span class="count">({{ $value.Count }})</span>
+                    </a>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ partial "pagination.html" . }}
+</div>

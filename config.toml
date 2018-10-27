@@ -1,4 +1,4 @@
-baseURL = "http://javhub.tk"
+baseURL = "http://javhub.tk/"
 languageCode = "en-us"
 title = "javhub"
 Paginate = "30"
