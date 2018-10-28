@@ -3,18 +3,13 @@
     {{ partial "nav.html" . }}
     <main role="main">
 
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <div class="container">
-          <h1 class="display-3">JavHub.tk</h1>
-          <p>Your daily load of free Japanese Porn.</p>
-        </div>
-      </div>
+      {{ partial "banner.html" . }}
       
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-3 col-lg-2">
             {{ partial "nav-side.html" . }}
+            
           </div>
           <div class="col-sm-12 col-md-9 col-lg-10">
             <div class="row">
@@ -37,10 +32,11 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-md-12 col-lg-12">
-                    <p>Actress: {{ .Params.girls }}</p>
-                    <p>Categories: {{ .Params.categories }}</p>
+                    <p>{{ if .Params.girls }}Actress: {{range .Params.girls}}<a href="{{ "/girls/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> &nbsp; {{end}}{{end}}</p>
+                    <p>{{ if .Params.categories }}Categories: {{range .Params.categories}}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> &nbsp; {{end}}{{end}}</p>
                     <p><a class="btn btn-primary" href="{{ .Params.urlfinal }}" role="button" target="_blank" rel="noopener noreferrer">View High Quality &raquo;</a></p>
                   </div>
+
                 </div>
               </div>
             </div>

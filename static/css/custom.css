@@ -51,3 +51,23 @@ footer .right{
 .hide{
     display: none;
 }
+
+div.navtop{
+    width: 900px;
+}
+li.navtop{
+    float: left;
+    width: 200px;
+    list-style: none;
+    margin-bottom: 0.5em;
+}
+.taxheader{
+    cursor: pointer;
+}
+.taxheader:hover{font-weight: bold;}
+
+.sitetitle{
+    color: #000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.sitetitle:hover{text-decoration: none;}

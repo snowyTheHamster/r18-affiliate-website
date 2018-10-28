@@ -7,7 +7,8 @@ now = datetime.datetime.now() #get current time
 savepath = '/content/r18' #save in a folder in the content dir of hugo
 savepath = (f''+os.getcwd()+savepath+'')
 
-with open('datacsv/scraperr18singles.csv') as csvfile: #open the csv containing the data
+# with open('datacsv/scraperr18singles.csv') as csvfile: #open the csv containing the data
+with open('datacsv/smalldemo.csv') as csvfile: #open the csv containing the data
     csvrows = csv.reader(csvfile, delimiter=',', quotechar='"') #define delimiter, quote characters
     for row in csvrows: #set variable per columns
         url = row[0]

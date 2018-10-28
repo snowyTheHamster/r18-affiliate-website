@@ -1,8 +1,8 @@
 <div class="sideblocks">
-    <header>{{ .key | upper }}</header>
-    <div>
+    <header class="taxheader" onclick="toggler()">{{ .key | upper }} <span class="d-block d-sm-block d-md-none">(show/hide)</span></header>
+    <div class="taxbody">
         <ul class="terms">
-            {{ range $key, $value := first 99 .value.ByCount }}
+            {{ range $key, $value := first 999 .value.ByCount }}
                 <li>
                     <a href="{{ $.baseurl}}{{ $.key }}/{{ .Name | urlize }}">
                         {{ .Name }} <span class="count">({{ $value.Count }})</span>

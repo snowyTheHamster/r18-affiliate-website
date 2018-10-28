@@ -1,0 +1,4 @@
+function toggler() {
+    $('.taxbody').toggle();
+
+}
